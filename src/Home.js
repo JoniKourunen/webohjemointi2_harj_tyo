@@ -14,7 +14,7 @@ class Home extends Component{
             address: "Koti",
             vari : "blue"
         }
-
+//tämä on testi
     }
 
     onAgeChanged(event){
