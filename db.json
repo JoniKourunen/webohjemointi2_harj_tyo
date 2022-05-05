@@ -1,0 +1,62 @@
+{
+  "asiakkaat": [
+    {
+      "id": 1,
+      "nimi": "Aku ankka",
+      "osoite": "Kaivotie",
+      "Postinumero": "50840",
+      "Postitoimipaikka": "Ankkalinna",
+      "puhelinnumero": "042304023"
+    },
+    {
+      "id": 2,
+      "nimi": "Pera Pervo",
+      "osoite": " Egmontintie",
+      "Postinumero": "34535",
+      "Postitoimipaikka": "Myrkky",
+      "puhelinnumero": "34242355"
+    },
+    {
+      "id": 3,
+      "nimi": "Jaska Jokunen",
+      "osoite": "Unohduksentie",
+      "Postinumero": "435543",
+      "Postitoimipaikka": "Ressula",
+      "puhelinnumero": "534634556"
+    },
+    {
+      "id": 4,
+      "nimi": "Spy",
+      "osoite": "Jäynätie",
+      "Postinumero": "4353",
+      "Postitoimipaikka": "MAD",
+      "puhelinnumero": "42355234"
+    },
+	        {
+        "id": 5,
+        "nimi": "Peräsmies",
+        "osoite": "Hernkeittokatu",
+        "Postinumero": "53453434",
+        "Postitoimipaikka": "Pahkasika",
+        "puhelinnumero": "534534"
+      }
+
+  ],
+    "Hylly":  {
+    "id": 1,
+    "Nimi": 1
+ 
+  },
+
+  "Tavara":  {
+    "id": 1,
+    "Nimitys": "Laatikko",
+    "Sarjanumero":1234
+  },
+
+  "Hyllytavara": {
+  "hylly_id": 1,
+  "tavara_id": 1,
+  "maara": 10
+  }
+}
