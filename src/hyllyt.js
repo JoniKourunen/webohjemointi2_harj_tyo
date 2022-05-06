@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Lisays from './Lisays';
 
 class Hyllyt extends Component {
 
@@ -24,8 +25,8 @@ class Hyllyt extends Component {
         this.setState({
             
             data: null,
-            enimi: document.getElementById("id").value,
-            eosoite: document.getElementById("nimi").value
+            id: document.getElementById("id").value,
+            nimi: document.getElementById("nimi").value
 
         })
     
@@ -53,6 +54,26 @@ class Hyllyt extends Component {
          // await this.buttonClicked()
           
     }
+    async poista(event) {  //poista toiminto
+
+        
+        // alert("Poistettu "+ event.target.enimi);
+         
+          fetch('http://localhost:4000/Hylly' +  event.target.id, {
+             method: 'PUT',
+           })
+ 
+            this.fetchData();
+            
+ 
+            //alla oleva koodipätkä kopsattu netistä. käsketään odottaa hetken ennen kuin päivitetään sivu
+           setTimeout(function() { //Start the timer     
+             this.setState({render: true}) //After 1 second, set render to true
+         }.bind(this), 500)
+ 
+          // await this.buttonClicked()
+           
+     }
     
 
 
@@ -74,6 +95,7 @@ class Hyllyt extends Component {
         this.setState({ data: data });
 
     }
+        
 
     render() {
 
@@ -85,6 +107,7 @@ class Hyllyt extends Component {
                 <div>
                    
                     <form>
+                    <lisäys/>
                         <label>
 
                         Name:&nbsp;
@@ -133,20 +156,17 @@ class Hyllyt extends Component {
                 <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
 
         </div>
-
-
                 )
             }
         else {
-
+            <lisäys/>
            let dataObjektit = this.state.data.map((hylly) =>
 
                 <tr key={hylly.id}>
 
                     <td>{hylly.id}</td>
                     <td>{hylly.Nimi}</td>  
-              
-                                        
+                        
                     <button onClick={this.poista} id={hylly.id}> Poista</button>
                    
 
@@ -159,6 +179,8 @@ class Hyllyt extends Component {
 
                 <div>
                     <form>
+                    <lisäys/>
+
                         <label>
 
                             Name:&nbsp;
@@ -175,7 +197,7 @@ class Hyllyt extends Component {
                     </form>
 
                     <p><button onClick={this.buttonClicked} id="etsinappi">Etsi</button> </p>
-
+                    <lisäys/>
                     <table>
                         <tbody>
 
@@ -184,6 +206,8 @@ class Hyllyt extends Component {
 
                         </tbody>
                     </table>
+                    <div>
+                    </div>
                 </div>
 
             )

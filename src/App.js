@@ -1,6 +1,7 @@
 import './App.css';
 import Search from './Search';
 import Hyllyt from './Hyllyt';
+import Lisays from './Lisays';
 
 import Home from './Home';
 import { Link, Outlet } from 'react-router-dom';
@@ -15,12 +16,13 @@ function App() {
 
         <p>
           WEB2 harjoitustyö
+          <lisäys/>
     
 
        {/*    <Search/>  */}
           <nav>
 
-
+          <lisäys/>
             [<Link to="/Hyllyt">Hyllyt</Link>]
 
             [<Link to="/Koti">Koti</Link>]
@@ -28,6 +30,8 @@ function App() {
             [<Link to="Yhteystiedot">Yhteystiedot</Link>]
           </nav>
           <Outlet/>
+
+          <lisäys/>
 
         
           
