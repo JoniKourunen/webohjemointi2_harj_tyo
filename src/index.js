@@ -8,13 +8,14 @@ import reportWebVitals from './reportWebVitals';
 import Koti from './Koti';
 import Yhteystiedotmiddle  from './Yhteystiedotmiddle';
 import Search from './Search';
+import Hyllyt from './Hyllyt';
 
 
 ReactDOMClient.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
    <Routes>
       <Route path="/" element={<App/>}>
-        <Route path="Search" element={<Search/>}/>
+        <Route path="Hyllyt" element={<Hyllyt/>}/>
         <Route path="Koti" element={<Koti/>}/>
         <Route path="Yhteystiedot" element={<Yhteystiedotmiddle/>}/>
         

@@ -1,5 +1,6 @@
 import './App.css';
 import Search from './Search';
+import Hyllyt from './Hyllyt';
 
 import Home from './Home';
 import { Link, Outlet } from 'react-router-dom';
@@ -13,15 +14,14 @@ function App() {
       <header className="App-header">
 
         <p>
-          Tehtävät 8-13
+          WEB2 harjoitustyö
     
-{/*    fdgdfgdg */}
+
        {/*    <Search/>  */}
           <nav>
 
-            {/* <Link to="/">Asiakkaat</Link> */}
 
-            [<Link to="/Search">Asiakkaat</Link>]
+            [<Link to="/Hyllyt">Hyllyt</Link>]
 
             [<Link to="/Koti">Koti</Link>]
 
@@ -33,7 +33,7 @@ function App() {
           
             </p>
   
-
+            
       </header>
 
       

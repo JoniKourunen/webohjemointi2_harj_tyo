@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-class Search extends Component {
+class Hyllyt extends Component {
 
     constructor(props) {
         super();
@@ -24,8 +24,8 @@ class Search extends Component {
         this.setState({
             
             data: null,
-            enimi: document.getElementById("etsinimi").value,
-            eosoite: document.getElementById("etsiosoite").value
+            enimi: document.getElementById("id").value,
+            eosoite: document.getElementById("nimi").value
 
 
         })
@@ -39,7 +39,7 @@ class Search extends Component {
         
        // alert("Poistettu "+ event.target.enimi);
         
-         fetch('http://localhost:4000/asiakkaat/' +  event.target.id, {
+         fetch('http://localhost:4000/Hylly' +  event.target.id, {
             method: 'DELETE',
           })
 
@@ -67,12 +67,10 @@ class Search extends Component {
 
         
 
-        let response = await fetch("http://localhost:4000/asiakkaat?nimi_like=" + document.getElementById("etsinimi").value + "&osoite_like=" + document.getElementById("etsiosoite").value);
+        let response = await fetch("http://localhost:4000/Hylly");
         let data = await response.json();
 
-       // console.log("data: " + data);
-       // console.log("data :" + JSON.stringify(data));
-       // console.log(data);
+ 
 
         this.setState({ data: data });
 
@@ -110,7 +108,6 @@ class Search extends Component {
                 </div>
 
             )
-
             else if (this.state.data.length == 0){
 
                 return(
@@ -133,7 +130,7 @@ class Search extends Component {
             </form>
 
                 <button onClick={this.buttonClicked} id="etsinappi">Etsi</button>
-
+                <button onClick={this.buttonClicked} id="etsinappi">Post</button>
                 <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
 
         </div>
@@ -141,26 +138,23 @@ class Search extends Component {
 
                 )
             }
-
         else {
 
-            let dataObjektit = this.state.data.map((tyyppi) =>
+           let dataObjektit = this.state.data.map((hylly) =>
 
-                <tr key={tyyppi.id}>
+                <tr key={hylly.id}>
 
-                    <td>  {tyyppi.nimi}    </td>
-
-                    <td>{tyyppi.osoite}</td> 
-                    <td> {tyyppi.Postinumero}</td>
-                    <td> {tyyppi.Postitoimipaikka}</td>
-                    <td> {tyyppi.puhelinnumero}</td>
-                    <button onClick={this.poista} id={tyyppi.id}> Poista</button>
+                    <td>{hylly.id}</td>
+                    <td>{hylly.Nimi}</td>  
+              
+                                        
+                    <button onClick={this.poista} id={hylly.id}> Poista</button>
                    
 
                 </tr>
 
             );
-                          console.log(dataObjektit)
+                          console.log(dataObjektit) 
 
             return (
 
@@ -199,7 +193,7 @@ class Search extends Component {
     }
 }
 
-export default Search
+export default Hyllyt
 
 
 
