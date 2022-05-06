@@ -24,7 +24,7 @@ class Home extends Component{
     }
 
     buttonClicked(){
-        alert("KLIKATTU");
+    alert("KLIKATTU");    
         console.log("tätä klikattiin");
         this.setState({
             vari: "red"

@@ -27,7 +27,6 @@ class Hyllyt extends Component {
             enimi: document.getElementById("id").value,
             eosoite: document.getElementById("nimi").value
 
-
         })
     
         
