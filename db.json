@@ -48,19 +48,20 @@
  
   },
 
-  "Tavara":  {
+  "Tavara":[  
+  {
     "id": 1,
     "Nimitys": "Laatikko",
     "Sarjanumero":1234,
     "Hyllynumero":1
   },
-  "Tavara":  {
+  {
     "id": 2,
     "Nimitys": "isolaatikko",
     "Sarjanumero":5678,
     "Hyllynumero":2
-  },
-
+  }
+  ],
   "Hyllytavara": {
   "hylly_id": 1,
   "tavara_id": 1,
