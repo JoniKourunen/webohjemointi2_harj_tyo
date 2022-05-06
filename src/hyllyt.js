@@ -27,7 +27,6 @@ class Search extends Component {
             enimi: document.getElementById("etsinimi").value,
             eosoite: document.getElementById("etsiosoite").value
 
-
         })
     
         

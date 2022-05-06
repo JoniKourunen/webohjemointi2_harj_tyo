@@ -51,7 +51,14 @@
   "Tavara":  {
     "id": 1,
     "Nimitys": "Laatikko",
-    "Sarjanumero":1234
+    "Sarjanumero":1234,
+    "Hyllynumero":1
+  },
+  "Tavara":  {
+    "id": 2,
+    "Nimitys": "isolaatikko",
+    "Sarjanumero":5678,
+    "Hyllynumero":2
   },
 
   "Hyllytavara": {
