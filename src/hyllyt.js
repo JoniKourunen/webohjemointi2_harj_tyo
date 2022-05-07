@@ -1,5 +1,8 @@
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import Lisays from './Lisays';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 class Hyllyt extends Component {
 
@@ -12,7 +15,9 @@ class Hyllyt extends Component {
         this.state = {
             data: null,
             enimi: "",
-            eosoite: ""
+            eosoite: "",
+            kpl: 0
+            [kpl, setKpl] = useState("")
 
         }
 
@@ -94,6 +99,25 @@ class Hyllyt extends Component {
         this.setState({ data: data });
 
     }
+    plus(){
+        fetch('http://localhost:4000/Tavara/' +  event.target.id, {
+            method: 'PUT',
+
+          })
+        this.setState({
+            kpl : this.state.tuote.kpl+1
+
+            
+        });
+        console.log(this.state.tuote.kpl)
+    }
+    miinus = () => {
+        this.setState({
+            kpl : this.state.tuote.kpl-1 
+            
+        });
+        console.log(this.state.tuote.kpl)
+    }
         
 
     render() {
@@ -150,8 +174,8 @@ class Hyllyt extends Component {
                
             </form>
 
-                <button onClick={this.buttonClicked} id="etsinappi">Etsi</button>
-                <button onClick={this.buttonClicked} id="etsinappi">Post</button>
+                <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
+                <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
                 <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
 
         </div>
@@ -172,10 +196,10 @@ class Hyllyt extends Component {
                     <td>{tuote.kpl}</td>
                    {/*  <td>{tuote.Hyllynumero}</td>  */}
                    <td>
-                        <button onClick={this.plus} id={tuote.id}> Lisää</button>
+                        <Button variant='success' onClick={this.plus} id={tuote.id} value={tuote.kpl}> +</Button>
                    </td>
                    <td>
-                    <button onClick={this.miinus} id={tuote.id}> Vähennä</button>
+                    <Button variant='danger' onClick={this.miinus} id={tuote.id} value={tuote.kpl}> -</Button>
                     </td>
                     
                      <td>  
@@ -196,7 +220,7 @@ class Hyllyt extends Component {
 
                         <td>
 
-                    <button onClick={this.poista} id={tuote.id}> Poista</button>
+                    <Button variant='secondary' onClick={this.poista} id={tuote.id}> Poista</Button>
                     </td>
                 
                 </tr>
