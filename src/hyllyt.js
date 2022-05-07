@@ -168,6 +168,7 @@ class Hyllyt extends Component {
                     <td>{tuote.id}</td>
                     <td>{tuote.Nimitys}</td>  
                     <td>{tuote.Sarjanumero}</td> 
+                    <td>{tuote.kpl}</td>
                    {/*  <td>{tuote.Hyllynumero}</td>  */}
                     
                     
@@ -223,6 +224,7 @@ class Hyllyt extends Component {
                             <th>Tuote id</th>
                             <th>Tuote nimitys</th>
                             <th>Tuote sarjanumero</th>
+                            <th>kpl</th>
                             <th>Hyllynumero</th>
                             <th>Poista</th>
                             </tr>

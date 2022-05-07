@@ -56,12 +56,14 @@
       "id": 1,
       "Nimitys": "Laatikko",
       "Sarjanumero": 1234,
+      "kpl": 2,
       "Hyllynumero": 1
     },
     {
       "id": 2,
       "Nimitys": "isolaatikko",
       "Sarjanumero": 5678,
+      "kpl": 10,
       "Hyllynumero": 2
     },
     {
@@ -69,12 +71,14 @@
       "Nimitys": "Pienilaatikko",
       "Sarjanumero": "423423",
       "Hyllynumero": "3",
+      "kpl": 7,
       "tavara_id": "3"
     },
     {
       "id": "4",
       "Nimitys": "Miljoonalaatikko",
       "Sarjanumero": "56546",
+      "kpl": 1,
       "Hyllynumero": "4"
     }
   ],
