@@ -18,10 +18,10 @@ class Hyllyt extends Component {
             eosoite: "",
             kpl: 0
 
-
         }
 
     }
+
 
     async buttonClicked() {   //etsi toiminto
 
@@ -97,24 +97,40 @@ class Hyllyt extends Component {
         let data = await response.json();
 
         this.setState({ data: data });
+        console.log(data.id);
 
     }
-    plus(){
-
-        this.setState({
-            kpl : this.state.tuote.kpl+1
-
-            
-        });
+    async plus(event){
+        await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
+            method: 'PUT'
+            .then(response => {
+                this.setState({
+                    kpl: this.state.kpl +1
+                })
+                console.log(this.state.tuote.kpl)
+            }
+                )
+          })
         console.log(this.state.tuote.kpl)
+        this.fetchData();
     }
-    miinus = () => {
-        this.setState({
-            kpl : this.state.tuote.kpl-1 
-            
-        });
+    
+    async miinus(event){
+        await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
+            method: 'PUT'
+            .then(response => {
+                this.setState({
+                    kpl: this.state.kpl -1
+                })
+                console.log(this.state.tuote.kpl)
+            }
+                )
+          })
         console.log(this.state.tuote.kpl)
+        this.fetchData();
     }
+
+
         
 
     render() {
