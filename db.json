@@ -80,6 +80,13 @@
       "Sarjanumero": "56546",
       "kpl": 1,
       "Hyllynumero": "4"
+    },
+    {
+      "id": "5",
+      "Nimitys": "Kytkin",
+      "Sarjanumero": "34223234",
+      "Hyllynumero": "2",
+      "kpl": "1"
     }
   ],
   "Hyllytavara": {

@@ -42,7 +42,7 @@ export class Lisays extends Component {
 
 
     render() {
-        const { id, Nimitys, Sarjanumero, Hyllynumero } = this.state
+        const { id, Nimitys, Sarjanumero, kpl, Hyllynumero } = this.state
         
         
         return (
@@ -74,6 +74,14 @@ export class Lisays extends Component {
                         value={Sarjanumero} 
                         onChange={this.changeHandler} 
                         placeholder="Sarjanumero"
+                        />
+                    </div>                    <div>
+                        <input 
+                        type="text" 
+                        name="kpl" 
+                        value={kpl} 
+                        onChange={this.changeHandler} 
+                        placeholder="kpl"
                         />
                     </div>
                     <div>
