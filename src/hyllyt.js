@@ -39,7 +39,7 @@ class Hyllyt extends Component {
         
        // alert("Poistettu "+ event.target.enimi);
         
-         fetch('http://localhost:4000/Hylly' +  event.target.id, {
+         fetch('http://localhost:4000/Tavara/' +  event.target.id, {
             method: 'DELETE',
           })
 
@@ -52,14 +52,14 @@ class Hyllyt extends Component {
         }.bind(this), 500)
 
          // await this.buttonClicked()
-          
+         this.fetchData();
     }
-    async poista(event) {  //poista toiminto
+/*     async poista(event) {  //poista toiminto
 
         
         // alert("Poistettu "+ event.target.enimi);
          
-          fetch('http://localhost:4000/Hylly' +  event.target.id, {
+          fetch('http://localhost:4000/Tavara' +  event.target.tavara_id, {
              method: 'PUT',
            })
  
@@ -73,7 +73,7 @@ class Hyllyt extends Component {
  
           // await this.buttonClicked()
            
-     }
+     } */
     
 
 
@@ -87,10 +87,8 @@ class Hyllyt extends Component {
 
         
 
-        let response = await fetch("http://localhost:4000/Hylly");
+        let response = await fetch("http://localhost:4000/Tavara");
         let data = await response.json();
-
- 
 
         this.setState({ data: data });
 
@@ -106,8 +104,8 @@ class Hyllyt extends Component {
             return (
                 <div>
                    
-                    <form>
-                    <lisäys/>
+{/*                     <form>
+                    <Lisays/>
                         <label>
 
                         Name:&nbsp;
@@ -123,14 +121,14 @@ class Hyllyt extends Component {
                        
                     </form>
 
-                        <button onClick={this.buttonClicked} id="etsinappi">Etsi</button>
+                        <button onClick={this.buttonClicked} id="etsinappi">Etsi</button> */}
 
                         <p>Loading....</p>
 
                 </div>
 
             )
-            else if (this.state.data.length == 0){
+            else if (this.state.data.length === 0){
 
                 return(
             <div>
@@ -159,15 +157,34 @@ class Hyllyt extends Component {
                 )
             }
         else {
-            <lisäys/>
-           let dataObjektit = this.state.data.map((hylly) =>
+            <Lisays/>
 
-                <tr key={hylly.id}>
 
-                    <td>{hylly.id}</td>
-                    <td>{hylly.Nimi}</td>  
-                        
-                    <button onClick={this.poista} id={hylly.id}> Poista</button>
+           let dataObjektit = this.state.data.map((tuote) =>
+         
+      
+                <tr key={tuote.id}>
+
+                    <td>{tuote.id}</td>
+                    <td>{tuote.Nimitys}</td>  
+                    <td>{tuote.Sarjanumero}</td> 
+                   {/*  <td>{tuote.Hyllynumero}</td>  */}
+                    
+                    
+                     <td>  
+                    <label for="Hylly"></label>
+                    <select id="hylly" name="hylly">
+                    <option value="hylly.hylly_id">1</option>
+                    <option value="hylly.hylly_id">2</option>
+                    <option value="hylly.hylly_id">3</option>
+                    <option value="hylly.hylly_id">4</option>
+
+                
+                    </select>
+                        </td> 
+
+
+                    <button onClick={this.poista} id={tuote.id}> Poista</button>
                    
 
                 </tr>
@@ -178,8 +195,8 @@ class Hyllyt extends Component {
             return (
 
                 <div>
-                    <form>
-                    <lisäys/>
+                  {/*   <form>
+ 
 
                         <label>
 
@@ -196,13 +213,20 @@ class Hyllyt extends Component {
                         </label>
                     </form>
 
-                    <p><button onClick={this.buttonClicked} id="etsinappi">Etsi</button> </p>
-                    <lisäys/>
+                    <p><button onClick={this.buttonClicked} id="etsinappi">Etsi</button> </p> */}
+                    
+                    <Lisays/>
                     <table>
                         <tbody>
 
-
-                            <tr>{dataObjektit}</tr>
+                            <tr>
+                            <th>Tuote id</th>
+                            <th>Tuote nimitys</th>
+                            <th>Tuote sarjanumero</th>
+                            <th>Hyllynumero</th>
+                            <th>Poista</th>
+                            </tr>
+                            {dataObjektit}
 
                         </tbody>
                     </table>

@@ -32,45 +32,55 @@
       "Postitoimipaikka": "MAD",
       "puhelinnumero": "42355234"
     },
-	        {
-        "id": 5,
-        "nimi": "Peräsmies",
-        "osoite": "Hernkeittokatu",
-        "Postinumero": "53453434",
-        "Postitoimipaikka": "Pahkasika",
-        "puhelinnumero": "534534"
-      }
-
-  ],
-
-    "Hylly": [ 
     {
-    "id": 1,
-    "Nimi": 1
-    }, 
-    {
-    "id": 2,
-    "Nimi": 2
+      "id": 5,
+      "nimi": "Peräsmies",
+      "osoite": "Hernkeittokatu",
+      "Postinumero": "53453434",
+      "Postitoimipaikka": "Pahkasika",
+      "puhelinnumero": "534534"
     }
   ],
-
-  "Tavara":[  
-  {
-    "tavaraId": 1,
-    "Nimitys": "Laatikko",
-    "Sarjanumero":1234,
-    "Hyllynumero":1
-  },
-  {
-    "tavaraId": 2,
-    "Nimitys": "isolaatikko",
-    "Sarjanumero":5678,
-    "Hyllynumero":2
-  }
+  "Hylly": [
+    {
+      "id": 1,
+      "Nimi": 1
+    },
+    {
+      "id": 2,
+      "Nimi": 2
+    }
+  ],
+  "Tavara": [
+    {
+      "id": 1,
+      "Nimitys": "Laatikko",
+      "Sarjanumero": 1234,
+      "Hyllynumero": 1
+    },
+    {
+      "id": 2,
+      "Nimitys": "isolaatikko",
+      "Sarjanumero": 5678,
+      "Hyllynumero": 2
+    },
+    {
+      "id": 3,
+      "Nimitys": "Pienilaatikko",
+      "Sarjanumero": "423423",
+      "Hyllynumero": "3",
+      "tavara_id": "3"
+    },
+    {
+      "id": "4",
+      "Nimitys": "Miljoonalaatikko",
+      "Sarjanumero": "56546",
+      "Hyllynumero": "4"
+    }
   ],
   "Hyllytavara": {
-  "hylly_id": 1,
-  "tavara_id": 1,
-  "maara": 10
+    "hylly_id": 1,
+    "tavara_id": 1,
+    "maara": 10
   }
 }

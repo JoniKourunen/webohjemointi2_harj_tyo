@@ -7,7 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Koti from './Koti';
 import Yhteystiedotmiddle  from './Yhteystiedotmiddle';
-import Search from './Search';
+
 import Hyllyt from './Hyllyt';
 
 
@@ -27,8 +27,6 @@ ReactDOMClient.createRoot(document.getElementById('root')).render(
    <App />
   
   </BrowserRouter>
-
-,
  
 );
 

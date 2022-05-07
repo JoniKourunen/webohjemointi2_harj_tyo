@@ -16,13 +16,15 @@ function App() {
 
         <p>
           WEB2 harjoitustyö
-          <lisäys/>
+        
     
 
        {/*    <Search/>  */}
           <nav>
 
-          <lisäys/>
+         {/*  <Lisays/> */}
+          
+          
             [<Link to="/Hyllyt">Hyllyt</Link>]
 
             [<Link to="/Koti">Koti</Link>]
@@ -30,8 +32,7 @@ function App() {
             [<Link to="Yhteystiedot">Yhteystiedot</Link>]
           </nav>
           <Outlet/>
-
-          <lisäys/>
+         
 
         
           

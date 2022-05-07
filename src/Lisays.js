@@ -1,25 +1,33 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import fetchData from './Hyllyt'
 
 export class Lisays extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
-        tavaraId:'',
+        id:'',
        Nimitys:'',
        Sarjanumero:'',
        Hyllynumero:''
     }
   }
   changeHandler = e => {
-      this.setState({ [e.target.tavaraId]: e.target.value })
+      this.setState({ [e.target.name]: e.target.value
+    
+    })
   }
+
+
+
+
+
   submitHandler = e => {
       e.preventDefault()
       console.log(this.state)
       axios
-      .post('http://localhost:4000/tavara', this.state)
+      .post('http://localhost:4000/Tavara', this.state)
       .then(response => {
           console.log(response)
         })
@@ -27,9 +35,16 @@ export class Lisays extends Component {
             console.log(error)
         })
 
+        
+
   }
+
+
+
     render() {
-        const { tavaraId, Nimitys, Sarjanumero, Hyllynumero } = this.state
+        const { id, Nimitys, Sarjanumero, Hyllynumero } = this.state
+        
+        
         return (
             <div>
                 <form onSubmit={this.submitHandler}>
@@ -37,9 +52,10 @@ export class Lisays extends Component {
                         <input 
                         type="text" 
                         name="id" 
-                        value={tavaraId} 
-                        onChange={this.changeHandler} 
-                        placeholder="ID"
+                        value={id}
+                        onChange={this.changeHandler}  
+                      /*   onChange={(e) => setName(e.target.value)} */ 
+                        placeholder="id"
                         />
                     </div>
                     <div>
@@ -69,7 +85,11 @@ export class Lisays extends Component {
                         placeholder="Hyllynumero"
                         />
                     </div>
+
                     <button type="submit">Tallenna</button>
+
+
+                   
                 </form>
             </div>
         )
