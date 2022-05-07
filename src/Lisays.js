@@ -26,11 +26,10 @@ export class Lisays extends Component {
 
 
 
-   submitHandler = e => {
+submitHandler = e => {
       e.preventDefault()
       console.log(this.state)
-      axios
-      .post('http://localhost:4000/Tavara', this.state)
+      axios.post('http://localhost:4000/Tavara', this.state)
       .then(response => {
           console.log(response)
         })
@@ -45,8 +44,6 @@ export class Lisays extends Component {
 
     render() {
         const { id, Nimitys, Sarjanumero, kpl, Hyllynumero } = this.state
-        
-        
         return (
             <div>
                 <form onSubmit={this.submitHandler}>

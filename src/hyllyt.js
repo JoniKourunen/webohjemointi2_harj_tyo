@@ -102,31 +102,29 @@ class Hyllyt extends Component {
     }
     async plus(event){
         await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
-            method: 'PUT'
-            .then(response => {
-                this.setState({
-                    kpl: this.state.kpl +1
-                })
-                console.log(this.state.tuote.kpl)
-            }
-                )
+            method: 'PUT',
+            body: JSON.stringify({
+            kpl : this.state.Tavara.kpl +1
+
+            })
+
+                
           })
-        console.log(this.state.tuote.kpl)
+        console.log(this.state.Tavara.kpl)
         this.fetchData();
     }
     
     async miinus(event){
         await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
-            method: 'PUT'
-            .then(response => {
-                this.setState({
-                    kpl: this.state.kpl -1
-                })
-                console.log(this.state.tuote.kpl)
-            }
-                )
+            method: 'PUT',
+            body: JSON.stringify({
+            kpl : this.state.Tavara.kpl -1
+
+            })
+
+                
           })
-        console.log(this.state.tuote.kpl)
+        console.log(this.state.Tavara.kpl)
         this.fetchData();
     }
 
