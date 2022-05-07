@@ -26,7 +26,7 @@ export class Lisays extends Component {
 
 
 
-  submitHandler = e => {
+   submitHandler = e => {
       e.preventDefault()
       console.log(this.state)
       axios
@@ -37,10 +37,9 @@ export class Lisays extends Component {
         .catch(error => {
             console.log(error)
         })
-
-        
-
-  }
+        .then(window.location.reload(false))
+    }
+  
 
 
 
