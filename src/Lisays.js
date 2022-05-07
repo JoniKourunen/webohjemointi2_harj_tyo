@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import fetchData from './Hyllyt'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 export class Lisays extends Component {
   constructor(props) {
@@ -94,7 +97,7 @@ export class Lisays extends Component {
                         />
                     </div>
 
-                    <button type="submit">Tallenna</button>
+                    <Button variant="primary" type="submit">Tallenna</Button>
 
 
                    

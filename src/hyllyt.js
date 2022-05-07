@@ -17,7 +17,7 @@ class Hyllyt extends Component {
             enimi: "",
             eosoite: "",
             kpl: 0
-            [kpl, setKpl] = useState("")
+
 
         }
 
@@ -100,10 +100,7 @@ class Hyllyt extends Component {
 
     }
     plus(){
-        fetch('http://localhost:4000/Tavara/' +  event.target.id, {
-            method: 'PUT',
 
-          })
         this.setState({
             kpl : this.state.tuote.kpl+1
 
