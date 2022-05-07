@@ -25,7 +25,7 @@ function App() {
          {/*  <Lisays/> */}
           
           
-            [<Link to="/Hyllyt">Hyllyt</Link>]
+            [<Link to="/Hyllyt">Tuotteet</Link>]
 
             [<Link to="/Koti">Koti</Link>]
 

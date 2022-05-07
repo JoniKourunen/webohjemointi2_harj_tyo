@@ -26,7 +26,8 @@ class Hyllyt extends Component {
             
             data: null,
             id: document.getElementById("id").value,
-            nimi: document.getElementById("nimi").value
+            nimi: document.getElementById("nimi").value,
+            kpl: document.getElementById("kpl").value
 
         })
     
@@ -170,7 +171,12 @@ class Hyllyt extends Component {
                     <td>{tuote.Sarjanumero}</td> 
                     <td>{tuote.kpl}</td>
                    {/*  <td>{tuote.Hyllynumero}</td>  */}
-                    
+                   <td>
+                        <button onClick={this.plus} id={tuote.id}> Lisää</button>
+                   </td>
+                   <td>
+                    <button onClick={this.miinus} id={tuote.id}> Vähennä</button>
+                    </td>
                     
                      <td>  
                     <label for="Hylly"></label>
@@ -182,12 +188,17 @@ class Hyllyt extends Component {
 
                 
                     </select>
+                    
                         </td> 
 
 
-                    <button onClick={this.poista} id={tuote.id}> Poista</button>
-                   
 
+
+                        <td>
+
+                    <button onClick={this.poista} id={tuote.id}> Poista</button>
+                    </td>
+                
                 </tr>
 
             );
@@ -225,7 +236,10 @@ class Hyllyt extends Component {
                             <th>Tuote nimitys</th>
                             <th>Tuote sarjanumero</th>
                             <th>kpl</th>
+                            <th>+</th>
+                            <th>-</th>
                             <th>Hyllynumero</th>
+                            
                             <th>Poista</th>
                             </tr>
                             {dataObjektit}
