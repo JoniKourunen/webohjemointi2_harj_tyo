@@ -5,8 +5,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Koti from './Koti';
-import Yhteystiedotmiddle  from './Yhteystiedotmiddle';
+
+
+import Tuotteet from './Tuotteet';
+import Muokkaus from './Muokkaus';
 
 import Hyllyt from './Hyllyt';
 
@@ -16,8 +18,8 @@ ReactDOMClient.createRoot(document.getElementById('root')).render(
    <Routes>
       <Route path="/" element={<App/>}>
         <Route path="Hyllyt" element={<Hyllyt/>}/>
-        <Route path="Koti" element={<Koti/>}/>
-        <Route path="Yhteystiedot" element={<Yhteystiedotmiddle/>}/>
+        <Route path="Tuotteet" element={<Tuotteet/>}/>
+        <Route path="Muokkaus" element={<Muokkaus/>}/>
         
     
     <Route path="*" element={<h1><b>Väärä reitti</b></h1>}/>

@@ -41,14 +41,16 @@
       "puhelinnumero": "534534"
     }
   ],
-  "Hylly": [
+  "Hyllyt": [
     {
       "id": 1,
-      "Nimi": 1
+      "Nimi": 1,
+      "Lisätieto": "Pieni"
     },
     {
       "id": 2,
-      "Nimi": 2
+      "Nimi": 2,
+      "Lisätieto": "Keskikokoinen"
     }
   ],
   "Tavara": [

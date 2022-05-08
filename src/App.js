@@ -29,11 +29,11 @@ function App() {
          {/*  <Lisays/> */}
           
           
-            [<Link to="/Hyllyt">Tuotteet</Link>]
+            [<Link to="/Hyllyt">Hyllyt</Link>]
 
-            [<Link to="/Koti">Koti</Link>]
+            [<Link to="/Tuotteet">Tuotteet</Link>]
 
-            [<Link to="Yhteystiedot">Yhteystiedot</Link>]
+            [<Link to="Muokkaus">Muokkaa tuotteita</Link>]
           </nav>
           <Outlet/>
          

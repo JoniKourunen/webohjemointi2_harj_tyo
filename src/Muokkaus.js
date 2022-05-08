@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-class Hyllyt extends Component {
+class Tuotteet extends Component {
 
     constructor(props) {
         super();
@@ -97,7 +97,7 @@ class Hyllyt extends Component {
 
         
 
-        let response = await fetch("http://localhost:4000/Hyllyt");
+        let response = await fetch("http://localhost:4000/Tavara");
         let data = await response.json();
 
         this.setState({ data: data });
@@ -105,7 +105,7 @@ class Hyllyt extends Component {
 
     }
     async plus(event){
-        await fetch('http://localhost:4000/Tavara/Hyllyt' +  event.target.id, {
+        await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
             method: 'PUT',
             body: JSON.stringify({
             kpl : this.state.Tavara.kpl +1
@@ -119,7 +119,7 @@ class Hyllyt extends Component {
     }
     
     async miinus(event){
-        await fetch('http://localhost:4000/Hyllyt/' +  event.target.id, {
+        await fetch('http://localhost:4000/Tavara/' +  event.target.id, {
             method: 'PUT',
             body: JSON.stringify({
             kpl : this.state.Tavara.kpl -1
@@ -197,29 +197,45 @@ class Hyllyt extends Component {
                 )
             }
         else {
-            
+           
 
 
-           let dataObjektit = this.state.data.map((Hylly) =>
+           let dataObjektit = this.state.data.map((tuote) =>
          
       
-                <tr key={Hylly.id}>
+                <tr key={tuote.id}>
 
-                    <td>{Hylly.id}</td>
-                    <td>{Hylly.Nimi}</td>  
-                    <td>{Hylly.Lisätieto}</td> 
-                  
+                    <td>{tuote.id}</td>
+                    <td>{tuote.Nimitys}</td>  
+                    <td>{tuote.Sarjanumero}</td> 
+                    <td>{tuote.kpl}</td>
                    {/*  <td>{tuote.Hyllynumero}</td>  */}
-            
+                   <td>
+                        <Button variant='success' onClick={this.plus} id={tuote.id} value={tuote.kpl}> +</Button>
+                   </td>
+                   <td>
+                    <Button variant='danger' onClick={this.miinus} id={tuote.id} value={tuote.kpl}> -</Button>
+                    </td>
                     
-        
+                     <td>  
+                    <label for="Hylly"></label>
+                    <select id="hylly" name="hylly">
+                    <option value="hylly.hylly_id">1</option>
+                    <option value="hylly.hylly_id">2</option>
+                    <option value="hylly.hylly_id">3</option>
+                    <option value="hylly.hylly_id">4</option>
+
+                
+                    </select>
+                    
+                        </td> 
 
 
 
 
                         <td>
 
-                    <Button variant='secondary' onClick={this.poista} id={Hylly.id}> Poista</Button>
+                    <Button variant='secondary' onClick={this.poista} id={tuote.id}> Poista</Button>
                     </td>
                 
                 </tr>
@@ -249,16 +265,19 @@ class Hyllyt extends Component {
                     </form>
 
                     <p><button onClick={this.buttonClicked} id="etsinappi">Etsi</button> </p> */}
-                
+                    
+                  
                     <table>
                         <tbody>
 
                             <tr>
-                            <th>Hylly id</th>
-                            <th>Nimi</th>
-                            <th>Lisätieto</th>
-
-                         
+                            <th>Tuote id</th>
+                            <th>Tuote nimitys</th>
+                            <th>Tuote sarjanumero</th>
+                            <th>kpl</th>
+                            <th>+</th>
+                            <th>-</th>
+                            <th>Hyllynumero</th>
                             
                             <th>Poista</th>
                             </tr>
@@ -276,7 +295,7 @@ class Hyllyt extends Component {
     }
 }
 
-export default Hyllyt
+export default Tuotteet
 
 
 
