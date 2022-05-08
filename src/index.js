@@ -11,13 +11,13 @@ import Tuotteet from './Tuotteet';
 import Muokkaus from './Muokkaus';
 
 import Hyllyt from './Hyllyt';
-
+import Hyllythook from './Hyllythook';
 
 ReactDOMClient.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
    <Routes>
       <Route path="/" element={<App/>}>
-        <Route path="Hyllyt" element={<Hyllyt/>}/>
+        <Route path="Hyllythook" element={<Hyllythook/>}/>
         <Route path="Tuotteet" element={<Tuotteet/>}/>
         <Route path="Muokkaus" element={<Muokkaus/>}/>
         

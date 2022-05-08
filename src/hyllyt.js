@@ -64,27 +64,8 @@ class Hyllyt extends Component {
          // await this.buttonClicked()
          this.fetchData();
     }
-/*     async poista(event) {  //poista toiminto
 
-        
-        // alert("Poistettu "+ event.target.enimi);
-         
-          fetch('http://localhost:4000/Tavara' +  event.target.tavara_id, {
-             method: 'PUT',
-           })
- 
-            this.fetchData();
-            
- 
-            //alla oleva koodipätkä kopsattu netistä. käsketään odottaa hetken ennen kuin päivitetään sivu
-           setTimeout(function() { //Start the timer     
-             this.setState({render: true}) //After 1 second, set render to true
-         }.bind(this), 500)
- 
-          // await this.buttonClicked()
-           
-     } */
-    
+
 
 
     componentDidMount() {

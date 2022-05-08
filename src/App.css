@@ -29,8 +29,10 @@
 }
 table, th, td {
   border: 1px solid black;
-  border-collapse: collapse;
+/*   border-collapse: collapse; */
   align-items: center;
+  border-spacing: 10px;
+  border-collapse: separate;
 }
 
 @keyframes App-logo-spin {
