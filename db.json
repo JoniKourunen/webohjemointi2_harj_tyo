@@ -62,11 +62,9 @@
       "Hyllynumero": 1
     },
     {
-      "id": 2,
       "Nimitys": "isolaatikko",
-      "Sarjanumero": 5678,
-      "kpl": 10,
-      "Hyllynumero": 2
+      "kpl": 11,
+      "id": 2
     },
     {
       "id": 3,

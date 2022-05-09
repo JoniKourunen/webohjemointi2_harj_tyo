@@ -65,6 +65,7 @@ class Muokkaus extends Component {
             })
             if(event.target.value >11){
                 alert("Enempää ei mahdu hyllylle!")
+                kpl: event.target.value-=1
                 return;
             }
             else{
@@ -81,6 +82,7 @@ class Muokkaus extends Component {
             })
             if(event.target.value <1){
                 alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
+                kpl: event.target.value++
                 return;
             }
             else{
