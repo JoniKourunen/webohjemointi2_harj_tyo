@@ -49,14 +49,14 @@ class Muokkaus extends Component {
         this.fetchData();
     }
 
-    async fetchData() {
+    async fetchData() {     //tietojen haku
 
         let response = await fetch("http://localhost:4000/Tavara");
         let data = await response.json();
         this.setState({ data: data });
     }
 
-    async plus(event){
+    async plus(event){  //määrän lisäys nappi
         console.log(event.target.id)
         console.log(event.target.value)
         await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
@@ -65,13 +65,14 @@ class Muokkaus extends Component {
             })
             if(event.target.value >11){
                 alert("Enempää ei mahdu hyllylle!")
+                return;
             }
             else{
                 this.fetchData(); 
         }    
     }
 
-    async miinus(event){     
+    async miinus(event){     //määrän vähennys nappi.
         console.log(event.target.id)
         console.log(event.target.value)
         await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
@@ -80,6 +81,7 @@ class Muokkaus extends Component {
             })
             if(event.target.value <1){
                 alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
+                return;
             }
             else{
                 this.fetchData(); 
@@ -97,14 +99,24 @@ class Muokkaus extends Component {
                 return(
                     <div>
                         
-   
+                        <form>
+                            <label>
+                            Name:&nbsp;
+                                <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
+                                <p>Osoite:&nbsp;
+                                    <input id="etsiosoite" type="texbox" />
+                                </p>
+                            </label>
+                        </form>
+                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
+                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
                             <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
                     </div>
                         )
                     }
         else {
             let dataObjektit = this.state.data.map((tuote) =>
-                <tr data-testid="pUser" key={tuote.id}>
+                <tr key={tuote.id}>
                     <td>{tuote.id}</td>
                     <td>{tuote.Nimitys}</td>  
 
