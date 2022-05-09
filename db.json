@@ -23,15 +23,13 @@
   ],
   "Tavara": [
     {
-      "id": 1,
       "Nimitys": "Laatikko",
-      "Sarjanumero": 1234,
-      "kpl": 2,
-      "Hyllynumero": 1
+      "kpl": 10,
+      "id": 1
     },
     {
       "Nimitys": "isolaatikko",
-      "kpl": 11,
+      "kpl": 10,
       "id": 2
     },
     {
@@ -41,12 +39,12 @@
     },
     {
       "Nimitys": "Miljoonalaatikko",
-      "kpl": 1,
+      "kpl": 3,
       "id": "4"
     },
     {
       "Nimitys": "Kytkin",
-      "kpl": 1,
+      "kpl": 10,
       "id": "5"
     },
     {
