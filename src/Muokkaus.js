@@ -63,9 +63,9 @@ class Muokkaus extends Component {
                 Nimitys: event.target.name,
                 kpl: event.target.value++
             })
-            if(event.target.value >11){
+            if(event.target.value == 11 || event.target.value >11){
                 alert("Enempää ei mahdu hyllylle!")
-                kpl: event.target.value-=1
+                event.target.value-=1
                 return;
             }
             else{
@@ -82,7 +82,7 @@ class Muokkaus extends Component {
             })
             if(event.target.value <1){
                 alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
-                kpl: event.target.value++
+                event.target.value++
                 return;
             }
             else{
