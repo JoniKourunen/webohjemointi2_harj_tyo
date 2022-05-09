@@ -64,7 +64,7 @@ class Muokkaus extends Component {
                 kpl: event.target.value++
             })
             if(event.target.value >11){
-                alert("liian Suuri")
+                alert("Enempää ei mahdu hyllylle!")
             }
             else{
                 this.fetchData(); 
@@ -78,8 +78,8 @@ class Muokkaus extends Component {
                 Nimitys: event.target.name,
                 kpl: event.target.value-=1
             })
-            if(event.target.value <0){
-                alert("Liian pieni")
+            if(event.target.value <1){
+                alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
             }
             else{
                 this.fetchData(); 
