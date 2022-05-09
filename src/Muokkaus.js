@@ -57,23 +57,21 @@ class Muokkaus extends Component {
     }
 
     async plus(event){
-        this.fetchData(); 
         console.log(event.target.id)
         console.log(event.target.value)
         await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
-            Nimitys: event.target.name,
-            kpl: event.target.value++
+                Nimitys: event.target.name,
+                kpl: event.target.value++
             })
             if(event.target.value >11){
                 alert("liian Suuri")
             }
             else{
                 this.fetchData(); 
-            }    
+        }    
     }
 
     async miinus(event){     
-        this.fetchData(); 
         console.log(event.target.id)
         console.log(event.target.value)
         await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
@@ -81,12 +79,11 @@ class Muokkaus extends Component {
                 kpl: event.target.value-=1
             })
             if(event.target.value <0){
-                alert("liian Pieni")
+                alert("Liian pieni")
             }
             else{
                 this.fetchData(); 
-            }
-  
+        }
     }
 
     render() {
