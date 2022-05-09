@@ -97,24 +97,14 @@ class Muokkaus extends Component {
                 return(
                     <div>
                         
-                        <form>
-                            <label>
-                            Name:&nbsp;
-                                <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-                                <p>Osoite:&nbsp;
-                                    <input id="etsiosoite" type="texbox" />
-                                </p>
-                            </label>
-                        </form>
-                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
-                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
+   
                             <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
                     </div>
                         )
                     }
         else {
             let dataObjektit = this.state.data.map((tuote) =>
-                <tr key={tuote.id}>
+                <tr data-testid="pUser" key={tuote.id}>
                     <td>{tuote.id}</td>
                     <td>{tuote.Nimitys}</td>  
 

@@ -1,55 +1,23 @@
 {
-  "asiakkaat": [
-    {
-      "id": 1,
-      "nimi": "Aku ankka",
-      "osoite": "Kaivotie",
-      "Postinumero": "50840",
-      "Postitoimipaikka": "Ankkalinna",
-      "puhelinnumero": "042304023"
-    },
-    {
-      "id": 2,
-      "nimi": "Pera Pervo",
-      "osoite": " Egmontintie",
-      "Postinumero": "34535",
-      "Postitoimipaikka": "Myrkky",
-      "puhelinnumero": "34242355"
-    },
-    {
-      "id": 3,
-      "nimi": "Jaska Jokunen",
-      "osoite": "Unohduksentie",
-      "Postinumero": "435543",
-      "Postitoimipaikka": "Ressula",
-      "puhelinnumero": "534634556"
-    },
-    {
-      "id": 4,
-      "nimi": "Spy",
-      "osoite": "Jäynätie",
-      "Postinumero": "4353",
-      "Postitoimipaikka": "MAD",
-      "puhelinnumero": "42355234"
-    },
-    {
-      "id": 5,
-      "nimi": "Peräsmies",
-      "osoite": "Hernkeittokatu",
-      "Postinumero": "53453434",
-      "Postitoimipaikka": "Pahkasika",
-      "puhelinnumero": "534534"
-    }
-  ],
   "Hyllyt": [
     {
       "id": 1,
-      "Nimi": 1,
-      "Lisätieto": "Pieni"
+      "Nimi": "Päähylly",
+      "Lisätieto": "Suuri"
     },
     {
       "id": 2,
-      "Nimi": 2,
+      "Nimi": "Lisähylly1",
+      "Lisätieto": "Keskikokoinen"
+    },
+    {
+      "id": 3,
+      "Nimi": "Lisähylly2",
+      "Lisätieto": "Keskikokoinen"
+    },
+    {
+      "id": 2,
+      "Nimi": "Varahylly",
       "Lisätieto": "Keskikokoinen"
     }
   ],
@@ -62,39 +30,44 @@
       "Hyllynumero": 1
     },
     {
-      "id": 2,
       "Nimitys": "isolaatikko",
-      "Sarjanumero": 5678,
-      "kpl": 10,
-      "Hyllynumero": 2
+      "kpl": 11,
+      "id": 2
     },
     {
-      "id": 3,
       "Nimitys": "Pienilaatikko",
-      "Sarjanumero": "423423",
-      "Hyllynumero": "3",
       "kpl": 7,
-      "tavara_id": "3"
+      "id": 3
     },
     {
-      "id": "4",
       "Nimitys": "Miljoonalaatikko",
-      "Sarjanumero": "56546",
       "kpl": 1,
-      "Hyllynumero": "4"
+      "id": "4"
     },
     {
-      "id": "5",
       "Nimitys": "Kytkin",
-      "Sarjanumero": "34223234",
-      "Hyllynumero": "2",
-      "kpl": "1"
+      "kpl": 1,
+      "id": "5"
     },
     {
       "id": "6",
       "Nimitys": "Lava",
       "Sarjanumero": "123124",
       "Hyllynumero": "6",
+      "kpl": "3"
+    },
+    {
+      "id": "7",
+      "Nimitys": "Jeesbox",
+      "Sarjanumero": "2312",
+      "Hyllynumero": "3",
+      "kpl": "2"
+    },
+    {
+      "id": "8",
+      "Nimitys": "sdf",
+      "Sarjanumero": "342423",
+      "Hyllynumero": "2",
       "kpl": "3"
     }
   ],

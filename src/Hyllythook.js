@@ -35,7 +35,7 @@ function Henkilot(props) {
 
 
 
-            {isLoading ? <div>Loading ...</div> :
+            {isLoading ? <div>Loading...</div> :
                 (<table>
                     <tbody>
                         <tr>

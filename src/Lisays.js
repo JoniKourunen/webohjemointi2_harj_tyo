@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import fetchData from './Hyllyt'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
 
 
 export class Lisays extends Component {
@@ -11,7 +9,7 @@ export class Lisays extends Component {
     super(props)
   
     this.state = {
-        id:'',
+       id:'',
        Nimitys:'',
        Sarjanumero:'',
        Hyllynumero:''
@@ -22,10 +20,6 @@ export class Lisays extends Component {
     
     })
   }
-
-
-
-
 
 
 
@@ -40,11 +34,9 @@ submitHandler = e => {
             console.log(error)
         })
         .then(window.location.reload(false))
+        alert("Tuote lisätty")
     }
   
-
-
-
     render() {
         const { id, Nimitys, Sarjanumero, kpl, Hyllynumero } = this.state
         return (
@@ -77,7 +69,8 @@ submitHandler = e => {
                         onChange={this.changeHandler} 
                         placeholder="Sarjanumero"
                         />
-                    </div>                    <div>
+                    </div>                    
+                    <div>
                         <input 
                         type="text" 
                         name="kpl" 
@@ -96,9 +89,7 @@ submitHandler = e => {
                         />
                     </div>
 
-                    <Button variant="primary" type="submit">Tallenna</Button>
-
-
+                    <Button data-testid={"btn1"} variant="primary" type="submit">Tallenna</Button>
                    
                 </form>
             </div>

@@ -9,9 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
   //npx json-server db.json --watch --port 4000
 
-
 function App() {
-
 
     
   return (
@@ -21,13 +19,10 @@ function App() {
         <p>
           WEB2 harjoitustyö
         
-    
-
-       {/*    <Search/>  */}
+     
           <nav>
 
-         {/*  <Lisays/> */}
-          
+              
           
             [<Link to="/Hyllythook">Hyllyt</Link>]
 

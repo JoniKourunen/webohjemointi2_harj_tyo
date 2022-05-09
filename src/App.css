@@ -28,11 +28,11 @@
   color: #61dafb;
 }
 table, th, td {
-  border: 1px solid black;
-/*   border-collapse: collapse; */
+  border: 2px solid black;
+  border-collapse: collapse;
   align-items: center;
-  border-spacing: 10px;
-  border-collapse: separate;
+  border-spacing: 20px;
+  /* border-collapse: separate; */
 }
 
 @keyframes App-logo-spin {
