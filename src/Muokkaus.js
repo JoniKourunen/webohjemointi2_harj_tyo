@@ -17,9 +17,8 @@ class Muokkaus extends Component {
 
         this.state = {
             data: null,
-            enimi: "",
-            eosoite: "",
             kpl: 0
+
         }    
     }
 
@@ -55,29 +54,39 @@ class Muokkaus extends Component {
         let response = await fetch("http://localhost:4000/Tavara");
         let data = await response.json();
         this.setState({ data: data });
-        console.log(data.id);
     }
 
     async plus(event){
+        this.fetchData(); 
         console.log(event.target.id)
         console.log(event.target.value)
-        event.target.value++
-        await axios.put(('http://localhost:4000/Tavara?id_like=' +  event.target.id), {
-                value: event.target.value
+        await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
+            Nimitys: event.target.name,
+            kpl: event.target.value++
             })
-            this.fetchData();
-            console.log(event.target.value)                
+            if(event.target.value >11){
+                alert("liian Suuri")
+            }
+            else{
+                this.fetchData(); 
+            }    
     }
 
-    async miinus(event){
+    async miinus(event){     
+        this.fetchData(); 
         console.log(event.target.id)
         console.log(event.target.value)
-        event.target.value-=1
-        await axios.put(('http://localhost:4000/Tavara?id_like=' +  event.target.id), {
-                value: event.target.value
+        await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
+                Nimitys: event.target.name,
+                kpl: event.target.value-=1
             })
-            this.fetchData();
-            console.log(event.target.value)                
+            if(event.target.value <0){
+                alert("liian Pieni")
+            }
+            else{
+                this.fetchData(); 
+            }
+  
     }
 
     render() {
@@ -111,14 +120,14 @@ class Muokkaus extends Component {
                 <tr key={tuote.id}>
                     <td>{tuote.id}</td>
                     <td>{tuote.Nimitys}</td>  
-                    <td>{tuote.Sarjanumero}</td> 
+
                     <td>{tuote.kpl}</td>
                 {/*  <td>{tuote.Hyllynumero}</td>  */}
                     <td>
-                            <Button variant='success' onClick={this.plus} id={tuote.id} value={tuote.kpl}> +</Button>
+                        <Button variant='success' onClick={this.plus} id={tuote.id} value={tuote.kpl} name={tuote.Nimitys}> +</Button>
                     </td>
                     <td>
-                        <Button variant='danger' onClick={this.miinus} id={tuote.id} value={tuote.kpl}> -</Button>
+                        <Button variant='danger' onClick={this.miinus} id={tuote.id} value={tuote.kpl} name={tuote.Nimitys}> -</Button>
                     </td>   
                         <td>  
                             <label for="Hylly"></label>
@@ -134,15 +143,14 @@ class Muokkaus extends Component {
                             </td>
                     </tr>
                 );
-                            console.log(dataObjektit) 
+                console.log(dataObjektit) 
             return (
                    <div>
                     <table>
                         <tbody>
                             <tr>
                                 <th>Tuote id</th>
-                                <th>Tuote nimitys</th>
-                                <th>Tuote sarjanumero</th>
+                                <th>nimitys</th>
                                 <th>kpl</th>
                                 <th>+</th>
                                 <th>-</th>
