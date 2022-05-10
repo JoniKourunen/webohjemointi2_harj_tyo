@@ -92,19 +92,28 @@ class Muokkaus extends Component {
     }
 
     async change(event) {   //dropbox value
+
+        
+        console.log(event.target.name)
+        console.log(event.target.kpl)
         console.log(event.target.id)
         console.log(event.target.value)
-        await axios.put('http://localhost:4000/Tavara/' + event.target.id, {
-            Nimitys: event.target.name,
-            Hyllynumero: event.target.value
-        })
+
+         await axios.put('http://localhost:4000/Tavara/' + event.target.id, {
+           Nimitys: event.target.name,
+           id: event.target.id,
+           Hyllynumero: event.target.value
+        }) 
+
         /*     if(event.target.value <1){
                 alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
                 event.target.value++
                 return;
+
+                <select name={tuote.id} id= {tuote.id}  onChange={this.change}  value={tuote.Hyllynumero} kpl={tuote.kpl }>
             }
             else{ */
-        console.log(event.target.value)
+        console.log(event.target)
         this.fetchData();
         // }
     }
@@ -152,15 +161,14 @@ class Muokkaus extends Component {
                     </td>
                     <td>
                         <label></label>
-                        <select name={tuote.id} /* onChange={this.change} */ value={this.state.value}>
-                           
-                            
+                        <select name={tuote.Nimitys} id= {tuote.id}  onChange={this.change}  value={tuote.Hyllynumero} kpl={tuote.kpl }>
+                     
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option  value="4">4</option>
-                                    <option  value="5">5</option>
-                                  
+                                    <option  value="5">5</option> 
+                                    <option  value="6">6</option> 
                                    
                         </select>
 

@@ -2,7 +2,7 @@ import './App.css';
 
 import Hyllyt from './Hyllyt';
 import Lisays from './Lisays';
-import Home from './Home';
+
 import { Link, Outlet } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 

@@ -24,9 +24,8 @@
   "Tavara": [
     {
       "Nimitys": "Laatikko",
-      "kpl": 3,
-      "id": 1,
-      "Hyllynumero": 1
+      "kpl": 2,
+      "id": 1
     },
     {
       "id": 2,
@@ -43,19 +42,20 @@
     {
       "Nimitys": "Miljoonalaatikko",
       "kpl": 1,
-      "id": "4",
+      "id": 4,
       "Hyllynumero": 4
     },
     {
       "Nimitys": "Kytkin",
       "kpl": 1,
-      "id": "5"
+      "id": 5,
+      "Hyllynumero": "3"
     },
     {
-      "id": "6",
+      "id": 6,
       "Nimitys": "Lava",
-      "Hyllynumero": "6",
-      "kpl": "3"
+      "Hyllynumero": 6,
+      "kpl": 3
     }
   ],
   "Hyllytavara": {

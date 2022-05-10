@@ -26,7 +26,7 @@ ReactDOMClient.createRoot(document.getElementById('root')).render(
     </Route>
    </Routes>
       
-   <App />
+  
   
   </BrowserRouter>
  
