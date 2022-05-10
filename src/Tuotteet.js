@@ -1,7 +1,8 @@
 import { Component, useState } from 'react';
 import Lisays from './Lisays';
 import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from 'react-bootstrap/Table';
 
 
 class Tuotteet extends Component {
@@ -96,24 +97,7 @@ class Tuotteet extends Component {
             return (
                 <div>
                    
-{/*                     <form>
-                    <Lisays/>
-                        <label>
 
-                        Name:&nbsp;
-                            <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-
-                            <p>Osoite:&nbsp;
-
-                                <input id="etsiosoite" type="texbox" />
-
-                            </p>
-                            
-                        </label>
-                       
-                    </form>
-
-                        <button onClick={this.buttonClicked} id="etsinappi">Etsi</button> */}
 
                         <p>Loading....</p>
 
@@ -159,26 +143,10 @@ class Tuotteet extends Component {
 
                     <td>{tuote.id}</td>
                     <td>{tuote.Nimitys}</td>  
-                    <td>{tuote.Sarjanumero}</td> 
+                  
                     <td>{tuote.kpl}</td>
-   
+                    <td>{tuote.Hyllynumero}</td>
                     
-                     <td>  
-                    <label for="Hylly"></label>
-                    <select id="hylly" name="hylly">
-                    <option value="hylly.hylly_id">1</option>
-                    <option value="hylly.hylly_id">2</option>
-                    <option value="hylly.hylly_id">3</option>
-                    <option value="hylly.hylly_id">4</option>
-
-                
-                    </select>
-                    
-                        </td> 
-
-
-
-
                         <td>
 
                     <Button variant='secondary' onClick={this.poista} id={tuote.id}> Poista</Button>
@@ -192,44 +160,26 @@ class Tuotteet extends Component {
             return (
 
                 <div>
-                  {/*   <form>
- 
-
-                        <label>
-
-                            Name:&nbsp;
-                            <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-
-                            <p>Osoite:&nbsp;
-
-                                <input id="etsiosoite" type="texbox" />
-
-                            </p>
-                            
-    
-                        </label>
-                    </form>
-
-                    <p><button onClick={this.buttonClicked} id="etsinappi">Etsi</button> </p> */}
+  
                     
                     <Lisays/>
-                    <table>
+                    <Table striped bordered hover size="lg">
                         <tbody>
 
                             <tr>
                             <th>Tuote id</th>
                             <th>Tuote nimitys</th>
-                            <th>Tuote sarjanumero</th>
+                          
                             <th>kpl</th>
                             
                             <th>Hyllynumero</th>
-                            
+                            <th>Poista</th>
                         
                             </tr>
                             {dataObjektit}
 
                         </tbody>
-                    </table>
+                    </Table>
                     <div>
                     </div>
                 </div>

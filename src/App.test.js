@@ -10,5 +10,3 @@ test('renders react component', async () => {
   );
 
 }); 
-
-

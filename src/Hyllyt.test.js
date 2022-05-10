@@ -8,6 +8,3 @@ describe("Yksinkertainen testi yksinkertaiselle palikalle", ()=>{
         expect(screen.getByText('Loading....')).toBeInTheDocument();
     })
 })
-
-
-

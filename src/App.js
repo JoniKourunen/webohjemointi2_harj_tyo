@@ -1,5 +1,5 @@
 import './App.css';
-import Search from './Search';
+
 import Hyllyt from './Hyllyt';
 import Lisays from './Lisays';
 import Home from './Home';

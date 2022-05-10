@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #99b9f1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   color: #61dafb;
 }
 table, th, td {
-  border: 2px solid black;
+/*   border: 2px solid black; */
   border-collapse: collapse;
   align-items: center;
   border-spacing: 20px;

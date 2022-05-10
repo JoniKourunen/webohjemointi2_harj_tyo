@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Table from 'react-bootstrap/Table';
 
 
 function Henkilot(props) {
@@ -36,7 +36,7 @@ function Henkilot(props) {
 
 
             {isLoading ? <div>Loading...</div> :
-                (<table>
+                (<Table striped bordered hover size="lg">
                     <tbody>
                         <tr>
                             <th>Hylly id</th>
@@ -53,7 +53,7 @@ function Henkilot(props) {
                                 <td>{Hylly.Lisätieto}</td>
                             </tr>))}
                     </tbody>
-                </table>)}
+                </Table>)}
 
             {(data.length === 0) && (isLoading === false) ? <div>Annetuilla hakuehdoilla ei löytynyt dataa.</div> : null}
 

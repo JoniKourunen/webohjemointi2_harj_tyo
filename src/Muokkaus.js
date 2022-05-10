@@ -3,6 +3,7 @@ import Lisays from './Lisays';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
+import Table from 'react-bootstrap/Table'
 
 
 class Muokkaus extends Component {
@@ -19,30 +20,30 @@ class Muokkaus extends Component {
             data: null,
             kpl: 0
 
-        }    
+        }
     }
 
     async buttonClicked() {   //etsi toiminto
-     
-        this.setState({ 
+
+        this.setState({
             data: null,
             id: document.getElementById("id").value,
             nimi: document.getElementById("nimi").value,
             kpl: document.getElementById("kpl").value
 
-        }) 
-       await this.fetchData();
+        })
+        await this.fetchData();
     }
 
     async poista(event) {  //poista toiminto
-        
-         axios.delete('http://localhost:4000/Tavara/' +  event.target.id, {
-          })
-           this.fetchData();
-            setTimeout(function() {    
-            this.setState({render: true})
+
+        axios.delete('http://localhost:4000/Tavara/' + event.target.id, {
+        })
+        this.fetchData();
+        setTimeout(function () {
+            this.setState({ render: true })
         }.bind(this), 500)
-         this.fetchData();
+        this.fetchData();
     }
 
     componentDidMount() {
@@ -56,102 +57,129 @@ class Muokkaus extends Component {
         this.setState({ data: data });
     }
 
-    async plus(event){  //määrän lisäys nappi
+    async plus(event) {  //määrän lisäys nappi
         console.log(event.target.id)
         console.log(event.target.value)
-        await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
-                Nimitys: event.target.name,
-                kpl: event.target.value++
-            })
-            if(event.target.value == 11 || event.target.value >11){
-                alert("Enempää ei mahdu hyllylle!")
-                event.target.value-=1
-                return;
-            }
-            else{
-                this.fetchData(); 
-        }    
+        await axios.put('http://localhost:4000/Tavara/' + event.target.id, {
+            Nimitys: event.target.name,
+            kpl: event.target.value++
+        })
+        if (event.target.value == 11 || event.target.value > 11) {
+            alert("Enempää ei mahdu hyllylle!")
+            event.target.value -= 1
+            return;
+        }
+        else {
+            this.fetchData();
+        }
     }
 
-    async miinus(event){     //määrän vähennys nappi.
+    async miinus(event) {     //määrän vähennys nappi.
         console.log(event.target.id)
         console.log(event.target.value)
-        await axios.put('http://localhost:4000/Tavara/' +  event.target.id, {
-                Nimitys: event.target.name,
-                kpl: event.target.value-=1
-            })
-            if(event.target.value <1){
+        await axios.put('http://localhost:4000/Tavara/' + event.target.id, {
+            Nimitys: event.target.name,
+            kpl: event.target.value -= 1
+        })
+        if (event.target.value < 1) {
+            alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
+            event.target.value++
+            return;
+        }
+        else {
+            this.fetchData();
+        }
+    }
+
+    async change(event) {   //dropbox value
+        console.log(event.target.id)
+        console.log(event.target.value)
+        await axios.put('http://localhost:4000/Tavara/' + event.target.id, {
+            Nimitys: event.target.name,
+            Hyllynumero: event.target.value
+        })
+        /*     if(event.target.value <1){
                 alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
                 event.target.value++
                 return;
             }
-            else{
-                this.fetchData(); 
-        }
+            else{ */
+        console.log(event.target.value)
+        this.fetchData();
+        // }
     }
+
 
     render() {
         if (this.state.data == null)
             return (
                 <div>
-                        <p>Loading....</p>
+                    <p>Loading....</p>
                 </div>
             )
-            else if (this.state.data.length === 0){
-                return(
-                    <div>
-                        
-                        <form>
-                            <label>
+        else if (this.state.data.length === 0) {
+            return (
+                <div>
+
+                    <form>
+                        <label>
                             Name:&nbsp;
-                                <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-                                <p>Osoite:&nbsp;
-                                    <input id="etsiosoite" type="texbox" />
-                                </p>
-                            </label>
-                        </form>
-                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
-                            <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
-                            <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
-                    </div>
-                        )
-                    }
+                            <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
+                            <p>Osoite:&nbsp;
+                                <input id="etsiosoite" type="texbox" />
+                            </p>
+                        </label>
+                    </form>
+                    <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
+                    <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
+                    <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
+                </div>
+            )
+        }
         else {
             let dataObjektit = this.state.data.map((tuote) =>
-                <tr key={tuote.id}>
+                <tr data-testid="pUser" key={tuote.id}>
                     <td>{tuote.id}</td>
-                    <td>{tuote.Nimitys}</td>  
+                    <td >{tuote.Nimitys}</td>
 
                     <td>{tuote.kpl}</td>
-                {/*  <td>{tuote.Hyllynumero}</td>  */}
+                    {/*  <td>{tuote.Hyllynumero}</td>  */}
                     <td>
                         <Button variant='success' onClick={this.plus} id={tuote.id} value={tuote.kpl} name={tuote.Nimitys}> +</Button>
                     </td>
                     <td>
                         <Button variant='danger' onClick={this.miinus} id={tuote.id} value={tuote.kpl} name={tuote.Nimitys}> -</Button>
-                    </td>   
-                        <td>  
-                            <label for="Hylly"></label>
-                                <select id="hylly" name="hylly">
-                                    <option value="hylly.hylly_id">1</option>
-                                    <option value="hylly.hylly_id">2</option>
-                                    <option value="hylly.hylly_id">3</option>
-                                    <option value="hylly.hylly_id">4</option>
-                                </select>           
-                        </td> 
-                            <td>
-                                <Button variant='secondary' onClick={this.poista} id={tuote.id}> Poista</Button>
-                            </td>
-                    </tr>
-                );
-                console.log(dataObjektit) 
+                    </td>
+                    <td>
+                        <label></label>
+                        <select name={tuote.id} /* onChange={this.change} */ value={this.state.value}>
+                           
+                            
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option  value="4">4</option>
+                                    <option  value="5">5</option>
+                                  
+                                   
+                        </select>
+
+
+
+                    </td>
+                    <td>
+                        <Button variant='secondary' onClick={this.poista} id={tuote.id}> Poista</Button>
+                    </td>
+                </tr>
+            );
+            console.log(dataObjektit)
             return (
-                   <div>
-                    <table>
+                <div>
+                    <Table striped bordered hover size="lg">
                         <tbody>
-                            <tr>
+                            <tr >
                                 <th>Tuote id</th>
-                                <th>nimitys</th>
+                                <th >nimitys</th>
                                 <th>kpl</th>
                                 <th>+</th>
                                 <th>-</th>
@@ -160,7 +188,7 @@ class Muokkaus extends Component {
                             </tr>
                             {dataObjektit}
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             )
         }

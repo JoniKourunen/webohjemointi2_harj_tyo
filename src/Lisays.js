@@ -61,15 +61,7 @@ submitHandler = e => {
                         placeholder="Nimitys"
                         />
                     </div>
-                    <div>
-                        <input 
-                        type="text" 
-                        name="Sarjanumero" 
-                        value={Sarjanumero} 
-                        onChange={this.changeHandler} 
-                        placeholder="Sarjanumero"
-                        />
-                    </div>                    
+                                   
                     <div>
                         <input 
                         type="text" 
