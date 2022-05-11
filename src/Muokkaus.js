@@ -105,12 +105,12 @@ class Muokkaus extends Component {
            Hyllynumero: event.target.value
         }) 
 
-        /*     if(event.target.value <1){
-                alert("Jos haluat vielä vähemmän tuotteita poista tuote.")
-                event.target.value++
+        /*     if(hylly === varattu){
+                JOs olisi hyllyt olisi saatu toimimaan 
+                järkevästi niin tässä olisi tarkastelu hyllyjä
                 return;
 
-                <select name={tuote.id} id= {tuote.id}  onChange={this.change}  value={tuote.Hyllynumero} kpl={tuote.kpl }>
+                
             }
             else{ */
         console.log(event.target)
@@ -128,21 +128,9 @@ class Muokkaus extends Component {
             )
         else if (this.state.data.length === 0) {
             return (
-                <div>
-
-                    <form>
-                        <label>
-                            Name:&nbsp;
-                            <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-                            <p>Osoite:&nbsp;
-                                <input id="etsiosoite" type="texbox" />
-                            </p>
-                        </label>
-                    </form>
-                    <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
-                    <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
+        
                     <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
-                </div>
+            
             )
         }
         else {

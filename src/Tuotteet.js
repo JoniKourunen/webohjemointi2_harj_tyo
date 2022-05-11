@@ -54,7 +54,7 @@ class Tuotteet extends Component {
            this.fetchData();
            
 
-           //alla oleva koodipätkä kopsattu netistä. käsketään odottaa hetken ennen kuin päivitetään sivu
+           
           setTimeout(function() { //Start the timer     
             this.setState({render: true}) //After 1 second, set render to true
         }.bind(this), 500)
@@ -83,10 +83,6 @@ class Tuotteet extends Component {
         console.log(data.id);
 
     }
- 
-
-
-        
 
     render() {
 
@@ -99,7 +95,7 @@ class Tuotteet extends Component {
                    
 
 
-                        <p>Loading....</p>
+                        <p>Loading....</p>{/*  näyttää latauruudun */}
 
                 </div>
 
@@ -107,36 +103,17 @@ class Tuotteet extends Component {
             else if (this.state.data.length === 0){
 
                 return(
-            <div>
-                   
-            <form>
-                <label>
-
-                Name:&nbsp;
-                    <input id="etsinimi" type="texbox" defaultValue={this.state.nimi} />
-
-                    <p>Osoite:&nbsp;
-
-                        <input id="etsiosoite" type="texbox" />
-
-                    </p>
-                    
-                </label>
-               
-            </form>
-
-                <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Etsi</Button>
-                <Button variant="primary" onClick={this.buttonClicked} id="etsinappi">Post</Button>
+        
                 <p>Annetuilla hakuehdoilla ei löytynyt dataa</p>
 
-        </div>
+   
                 )
             }
         else {
             <Lisays/>
 
 
-           let dataObjektit = this.state.data.map((tuote) =>
+           let dataObjektit = this.state.data.map((tuote) =>  /* haetaan tiedot json serverilta */
          
       
                 <tr key={tuote.id}>
@@ -162,7 +139,7 @@ class Tuotteet extends Component {
                 <div>
   
                     
-                    <Lisays/>
+                    <Lisays/>           {/* LUODAAN TAULUKKO */}
                     <Table striped bordered hover size="lg">
                         <tbody>
 
